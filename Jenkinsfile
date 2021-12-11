@@ -1,16 +1,10 @@
 node {
-    agent any
-    stages{
-        stage('Build') {
+    agent { docker { image 'python:3.10.1-alpine' } }
+    stages {
+        stage('build') {
             steps {
-                bat 'Hello.py'
+                sh 'python --version'
             }
-        }
-        stage('Test') {
-            echo 'Building....'
-        }
-        stage('Deploy') {
-            echo 'Deploying....'
         }
     }
 }
