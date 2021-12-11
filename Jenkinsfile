@@ -1,6 +1,8 @@
 node {
     stage('Build') {
-        sh 'Hello.py'
+        steps {
+            sh 'Hello.py'
+        }
     }
     stage('Test') {
         echo 'Building....'
