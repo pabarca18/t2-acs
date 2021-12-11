@@ -2,7 +2,7 @@ node {
     stages{
         stage('Build') {
             steps {
-                sh 'Hello.py'
+                bat 'Hello.py'
             }
         }
         stage('Test') {
