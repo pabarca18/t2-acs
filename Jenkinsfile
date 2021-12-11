@@ -1,9 +1,11 @@
-pipeline {
-    stages {
-        stage('build') {
-            steps {
-                sh 'python --version'
-            }
-        }
+node {
+    stage('Build') {
+        echo 'Building....'
+    }
+    stage('Test') {
+        echo 'Building....'
+    }
+    stage('Deploy') {
+        echo 'Deploying....'
     }
 }
