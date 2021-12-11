@@ -1,6 +1,6 @@
 node {
     stage('Build') {
-        echo 'Building....'
+        sh 'Hello.py'
     }
     stage('Test') {
         echo 'Building....'
