@@ -1,5 +1,9 @@
-stage('build') {
-    steps {
-        sh 'Hello.py'
+pipeline {
+    stages {
+        stage('build') {
+            steps {
+                sh 'python --version'
+            }
+        }
     }
 }
