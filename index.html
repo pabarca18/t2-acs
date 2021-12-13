@@ -16,6 +16,7 @@
 </body>
 
 <script>
+    
     function multiplicador() {
         m1 = [
             [1 ,2],
@@ -33,32 +34,33 @@
         col_m2 = m2[0].length;
 
         if (fil_m1 != col_m2) {
-            return 0;
-        }
+            document.write("<h1>" + 'La matríz no es consistente para el calculo' + "</h1>");
+        } else {
 
-        let multiplicacion = new Array(fil_m1);
-        for (x = 0; x < multiplicacion.length; x++) {
-            multiplicacion[x] = new Array(col_m2).fill(0);
-        }
-
-        for (x = 0; x < multiplicacion.length; x++) {
-            for (y = 0; y < multiplicacion[x].length; y++) {
-                for (z = 0; z < col_m1; z++) {
-                    multiplicacion[x][y] = multiplicacion[x][y] + m1[x][z] * m2[z][y];
+            let multiplicacion = new Array(fil_m1);
+            for (x = 0; x < multiplicacion.length; x++) {
+                multiplicacion[x] = new Array(col_m2).fill(0);
+            }
+    
+            for (x = 0; x < multiplicacion.length; x++) {
+                for (y = 0; y < multiplicacion[x].length; y++) {
+                    for (z = 0; z < col_m1; z++) {
+                        multiplicacion[x][y] = multiplicacion[x][y] + m1[x][z] * m2[z][y];
+                    }
                 }
             }
-        }
-    
-        document.write("<table>");
-        for (let i = 0; i < multiplicacion.length; i++) {
-            document.write("<tr>");
-            for (let y = 0; y < multiplicacion[i].length; y++) {
-                document.write("<td>" + (multiplicacion[i][y]) + "</td>");
+        
+            document.write("<table>");
+            for (let i = 0; i < multiplicacion.length; i++) {
+                document.write("<tr>");
+                for (let y = 0; y < multiplicacion[i].length; y++) {
+                    document.write("<td>" + (multiplicacion[i][y]) + "</td>");
+                }
+                document.write("</tr>");
             }
-            document.write("</tr>");
+            document.write("</table>");
+            return "Listo";
         }
-        document.write("</table>");
-        return "Listo";
     }
 
 </script>
